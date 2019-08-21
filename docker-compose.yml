@@ -1,0 +1,22 @@
+version: '2.0'
+services:
+  house:
+    image: zqiannnn/oms-app:v1.0
+    environment:
+      - CODE_MASTER="https://10266:handhand@rdc.hand-china.com/gitlab/hand-ln/oms-jst.git"
+      - PROFILE="dev"
+      - APP_NAME="house"
+      - APP_VERSION="0.1-SNAPSHOT"
+      - JAVA_OPTS="-Xms64m -Xmx256m -XX:MinHeapDeltaBytes=65536"
+    restart: always
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=house
+      - MONGO_INITDB_ROOT_PASSWORD=house
+      - MONGO_INITDB_DATABASE=house
+    restart: always
+
+
