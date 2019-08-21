@@ -3,7 +3,7 @@ services:
   house:
     image: zqiannnn/oms-app:v1.0
     environment:
-      - CODE_MASTER="https://10266:handhand@rdc.hand-china.com/gitlab/hand-ln/oms-jst.git"
+      - CODE_MASTER="https://github.com/yuki-xin/house.git"
       - PROFILE="dev"
       - APP_NAME="house"
       - APP_VERSION="0.1-SNAPSHOT"
